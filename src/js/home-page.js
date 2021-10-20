@@ -1,4 +1,4 @@
-let random = Math.round(Math.random() * 150) + 1;
+let random = Math.round(Math.random() * 898) + 1;
 
 window.onload = function () {
   getPokemon(random).then((pokemon) => {
@@ -11,14 +11,14 @@ function interval(index = 1) {
     getPokemon(index).then((pokemon) => {
       generateContent(pokemon);
     });
-    return index == 150 ? interval() : interval(index + 1);
+    return index == 898 ? interval() : interval(index + 1);
   }, 30000);
 }
 
 interval();
 
 function btnListener() {
-  random = Math.round(Math.random() * 150) + 1;
+  random = Math.round(Math.random() * 898) + 1;
   getPokemon(random).then((pokemon) => {
     generateContent(pokemon);
   });
@@ -40,7 +40,7 @@ function generateContent(pokemon) {
   pokeImgShiny.src = pokemon.sprites.front_shiny;
   pokeImgShiny.width = 200;
 
-  pokeName.innerHTML = `${pokemon.order}: ${pokemon.name}`;
+  pokeName.innerHTML = `${pokemon.id}: ${pokemon.name}`;
 
   imageDiv.append(pokeName);
   imageDiv.append(pokeImg);
